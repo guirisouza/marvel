@@ -11,13 +11,13 @@ Create a basic React project CRUD using MarvelAPI with test following the instru
 - In the character card, the user can go to a page where you can see the characters' details and its series
 - Create a form so you can edit a Marvel's character (saving only on the client-side)
 
-## **TO**
+## **TODO**
 
-- [ ] criar componente de listagem
-- [ ] criar componente card
-- [ ] criar detalhes do personagem com sua seria edição de nome apenas no front-side
-- [ ] criar busca/filtro de personagem por nome
-- [ ] criar os módulos de teste dos componentes
+- [ ] create listing component
+- [ ] create component card 
+- [ ] create characters' details with its name edition only on the front-side
+- [ ] create characters search tool  by name
+- [ ] create component test modules
 
 ### technical restrictions
 
