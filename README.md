@@ -1,6 +1,6 @@
 # Marvel Challenge
 
-![Alt Text](https://media.tenor.com/images/9b94db057576129266cf7d9ac9b107e1/tenor.gif)
+![Alt Text](https://media.tenor.com/images/9b94db057576129266cf7d9ac9b107e1/tenor.gif =400x)
 
 Create a basic React project CRUD using MarvelAPI with test following the instrutions bellow:
 
