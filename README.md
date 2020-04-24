@@ -19,9 +19,16 @@ Create a basic React project CRUD using MarvelAPI with test following the instru
 - [ ] criar busca/filtro de personagem por nome
 - [ ] criar os módulos de teste dos componentes
 
-## technical restrictions
+### technical restrictions
 
 - *create-react-app*
 - *redux to manage state*
 - *react-router to nav*
 - *testing-library to test*
+
+## running the project
+
+```
+npm install
+rpm run start
+```
