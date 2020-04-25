@@ -13,7 +13,7 @@ Create a basic React project CRUD using MarvelAPI with test following the instru
 
 ## **TODO**
 
-- [ ] create listing component
+- [x] create listing component
 - [ ] create component card 
 - [ ] create characters' details with its name edition only on the front-side
 - [ ] create characters search tool  by name
