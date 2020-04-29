@@ -1,19 +1,14 @@
 import React from 'react'
-import {StyledSectionCard} from './style'
+import {StyledContainerCard} from './style'
 
-const CharacterCard = () => {
+const CharacterCard = state => {
     return(
         <>
-            <StyledSectionCard>
-                <div className="content">
-                    <h1>Hulk</h1>
-                    <p>Outro outro outro outro outro outro outro outro outro outro outro 
-                    outro outro outro outro outro outro outro outro outro outro outro outro 
-                    outro outro outro outro outro outro outro outro outro outro outro outro 
-                    </p>
+            <StyledContainerCard props={state.char.images.sm} className="container-card">
+                <div>
+                    <span>{state.char.name}</span>
                 </div>
-                <div className="imagebox"></div>
-            </StyledSectionCard>
+            </StyledContainerCard>
         </>
     )
 }

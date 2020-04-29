@@ -3,7 +3,17 @@ html {
     padding: 0;
 }
 
-body {
-    margin: 0;
-    padding: 0;
+body, p, h1, ul, li, blockquote {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+   text-decoration: none; 
 }

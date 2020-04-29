@@ -1,37 +1,42 @@
 import styled from 'styled-components'
 
-const StyledSectionCard = styled.section`
+const StyledContainerCard = styled.div`
+    position: relative;
+    height: 280px;
+    width: 210px;
+    margin: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px 0px rgba(44,44,44,0.15);
+    background-image: url(${props => props.props});
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    transition: 0.3s;
 
-    height: 350px;
-    width: 1000px;
-    background-color: white;
-    box-shadow: 0 10px 30px
-    rgba(0,0,0,0.5);
-    display: flex;
-    margin-bottom: 30px;
-    border-radius: 5px 5px 5px 5px;
-
-    .content {
-        margin-top:10px;
-        width: calc(50%);
-        height: 70%;
-        background-color: white;
-        padding: 0% 5%;
-        line-height: 1.5em;
-        font-size: 18px;
-        text-align: justify;
+    div {
+        color: white;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+        height: 20%;
+        width: 100%;
+        background: rgba(0,0,0,0.8);
+        border-radius: 0 0 5px 5px;
+        font-family: 'Bangers', cursive;
+        font-size: 1.5em;
     }
 
-    .imagebox {
-        width: calc(50%);
-        heigth: 130%;
-        background-color: #ff0;
-        background: url(https://sm.ign.com/ign_pt/screenshot/default/hulk-blogroll-1555972904065_7x2k.jpg);
-        background-repeat: no-repeat;
-        background-size: 150%;
-        background-position: -150px 0px;
+    :hover {
+        border: 2px solid white;
+        cursor: pointer;
+        -webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.75);
     }
-
 `
 
-export {StyledSectionCard}
+export {StyledContainerCard}
