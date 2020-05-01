@@ -64,19 +64,25 @@ const StyledMainContainer = styled.main`
             }
         }
 
-        .edit-button {
-            display: flex;
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            justify-content: center;
-            align-items: center;
-            height: 30px;
-            width: 70px;
-            border-radius: 25px;
-            background: #26136E;
-            color: white;
-        }
+    button {
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        justify-content: center;
+        align-items: center;
+        border: 0;
+        border-radius: 0.25rem;
+        background: #1E88E5;
+        color: white;
+        font-family: system-ui, sans-serif;
+        font-size: 1rem;
+        line-height: 1.2;
+        white-space: nowrap;
+        text-decoration: none;
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem;
+        cursor: pointer;
     }
 `
 

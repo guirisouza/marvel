@@ -1,41 +1,59 @@
 import React from 'react'
+import {useDispatch} from 'react-redux';
 import MenuNavbar from '../menu-navbar/MenuNavbar'
 import Footer from '../footer/Footer'
 import {StyledMainContainer} from './style'
+import CharacterForm from '../character-form/CharacterForm'
+import { Toggle } from '../toggle/Toggle'
+import { showToggle, hideToggle } from '../toggle/ToggleActions'
 
-const CharacterDetails = () => {
+const CharacterDetails = props => {
+    const dispatch = useDispatch();
+    const toggleId = 'characterFormComponent';
+    console.log('@@@@@@@@@@@@@@@', props.location.state.char
+    )
+    const char = props.location.state.char
+
     return(
         <>
             <MenuNavbar/>
                 <StyledMainContainer>
-                    <div className="card">
-                        <div className="identifier">
-                            <span>Name</span>
-                            <span>Fullname</span>
-                        </div>
-                        <div class="appearance">
-                            <ul>
-                                <li>Gender</li>
-                                <li>Race</li>
-                            </ul>
-                        </div>
-                        <div class="image-char">
-                            <img src="https://cdn.rawgit.com/akabab/superhero-api/0.2.0/api/images/sm/2-abe-sapien.jpg" />
-                        </div>
-                        <div class="powerstats">
-                            <ul>
-                                <li>intelligence</li>
-                                <li>strength</li>
-                                <li>speed</li>
-                                <li>durability</li>
-                                <li>power</li>
-                                <li>combat</li>
-                            </ul>
-                            <div className="edit-button">
-                                <span class="material-icons">edit</span> edit
+                    <Toggle id={'characterDetailsComponent'}>
+                        <div className="card">
+                            <div className="identifier">
+                                <span>{char.name}</span>
+                            </div>
+                            <div class="appearance">
+                                <ul>
+                                    <li>Gender: {char.appearance.gender}</li>
+                                    <li>Race: {char.appearance.race}</li>
+                                </ul>
+                            </div>
+                            <div class="image-char">
+                                <img src={char.images.sm} />
+                            </div>
+                            <div class="powerstats">
+                                <ul>
+                                    <li>Intelligence: {char.powerstats.intelligence}</li>
+                                    <li>Strength: {char.powerstats.strength}</li>
+                                    <li>Speed: {char.powerstats.speed}</li>
+                                    <li>Durability: {char.powerstats.durability}</li>
+                                    <li>Power: {char.powerstats.power}</li>
+                                    <li>Combat: {char.powerstats.combat}</li>
+                                </ul>
+
+                                    <button onClick={() => {
+                                        dispatch(showToggle('characterFormComponent'));
+                                        dispatch(hideToggle('characterDetailsComponent'))}
+                                        }>
+                                    edit <span class="material-icons">keyboard_arrow_right</span></button>
+
                             </div>
                         </div>
-                    </div>
+                    </Toggle>
+                    <Toggle id={'characterFormComponent'}>
+                        <CharacterForm state={char}/>
+                    </Toggle>
                 </StyledMainContainer>
             <Footer/>
         </>
