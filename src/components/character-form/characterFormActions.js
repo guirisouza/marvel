@@ -1,7 +1,5 @@
 
 export const submitCharacterFormAction = (data, char) => {
-    console.log('AQQQQQUUUUUUUUUUUUUUUUUUIIII',char)
-    console.log('AQQQQQUUUUUUUUUUUUUUUUUUIIII',data)
     const keys = Object.keys(data)
 
     if(keys.includes('name')){char.name = data['name']}

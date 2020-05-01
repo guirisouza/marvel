@@ -31,6 +31,10 @@ const StyledCardMainContainer = styled.div`
         color: white;
     }
 
+    label {
+        color: #1E88E5;
+    }
+
     button {
         border: 0;
         border-radius: 0.25rem;

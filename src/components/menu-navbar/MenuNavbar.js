@@ -9,7 +9,6 @@ const MenuNavBar = () => {
             <a className="logo"><img src={logo} alt="logo"/></a>
             <nav>
                 <ul>
-                    <li><a>About Project</a></li>
                     <li><a>About Me</a></li>
                 </ul>
             </nav>

@@ -4,48 +4,56 @@ import { connect } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { StyledCardMainContainer } from './style'
 import { submitCharacterFormAction } from './characterFormActions'
+import { Toggle } from '../toggle/Toggle'
+import { showToggle, hideToggle } from '../toggle/ToggleActions'
 
 let CharacterForm = props => {
-    console.log('NOOOVOOOOOO',props)
     const {handleSubmit} = props
     const dispatch = useDispatch()
 
     const submit = (data, action) => {
         dispatch(submitCharacterFormAction(data, props.state))
+        dispatch(hideToggle('characterFormComponent'))
+        dispatch(showToggle('characterDetailsComponent'))
     }
     return(
         <>
-            <StyledCardMainContainer>
-                <form onSubmit={handleSubmit(fields => submit(fields, submitCharacterFormAction))}>
+            <Toggle id={'characterFormComponent'}>
+                <StyledCardMainContainer>
+                    <form onSubmit={handleSubmit(fields => submit(fields, submitCharacterFormAction))}>
+                        <label>Name</label>
+                        <Field type="text" component="input" placeholder={props.state.name} name="name"/>
                     
-                    <Field type="text" component="input" placeholder={props.state.name} name="name"/>
-                
-                    
-                    <Field type="text" component="input" placeholder={props.state.appearance.gender} name="gender"/>
+                        <label>Gender</label>
+                        <Field type="text" component="input" placeholder={props.state.appearance.gender} name="gender"/>
 
-                    
-                    <Field type="text" component="input" placeholder={props.state.appearance.race} name="race"/>
+                        <label>Race</label>
+                        <Field type="text" component="input" placeholder={props.state.appearance.race} name="race"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.intelligence} name="intelligence"/>
+                        <label>Intelligence</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.intelligence} name="intelligence"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.strength} name="strength"/>
+                        <label>Strength</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.strength} name="strength"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.speed} name="speed"/>
+                        <label>Speed</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.speed} name="speed"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.durability} name="durability"/>
+                        <label>Durability</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.durability} name="durability"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.power} name="power"/>
+                        <label>Power</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.power} name="power"/>
 
-                    
-                    <Field type="number" component="input" placeholder={props.state.powerstats.combat} name="combat"/>
-                    <button type="submit">Submit</button>
-                </form>
-            </StyledCardMainContainer>
+                        <label>Combat</label>
+                        <Field type="number" component="input" placeholder={props.state.powerstats.combat} name="combat"/>
+                        <div class="selectors">
+                            <button>return</button>
+                            <button type="submit">CUSTOMIZE</button>
+                        </div>
+                    </form>
+                </StyledCardMainContainer>
+            </Toggle>
         </>
     )
 }
@@ -54,8 +62,6 @@ CharacterForm = reduxForm({
     form: 'characterForm'
 })(CharacterForm)
 
-const mapStateToProps = state => ({
-
-})
+const mapStateToProps = state => ({characters: state.list.characters})
 
 export default connect(mapStateToProps, {submitCharacterFormAction})(CharacterForm)

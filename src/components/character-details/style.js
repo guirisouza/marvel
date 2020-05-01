@@ -7,8 +7,9 @@ const StyledMainContainer = styled.main`
     align-items: center;
     background-image: url(${background});
 
+
     .card {
-        margin:35px;
+        margin: 12.7vh;
         padding: 30px;
         border-radius: 10px;
         -webkit-box-shadow: 10px 10px 22px -5px rgba(0,0,0,0.75);
@@ -83,6 +84,8 @@ const StyledMainContainer = styled.main`
         padding: 0.25rem 0.5rem;
         margin: 0.25rem;
         cursor: pointer;
+
+
     }
 `
 

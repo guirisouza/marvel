@@ -1,6 +1,7 @@
 html {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
 
 body, p, h1, ul, li, blockquote {

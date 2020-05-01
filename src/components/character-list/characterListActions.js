@@ -10,3 +10,10 @@ export const loadCharList = () => {
     }
 }
 
+export const searchCharAction = (search) => {
+    return {
+        type: 'SEARCH_CHARACTER',
+        payload: search
+    }
+}
+

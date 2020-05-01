@@ -1,6 +1,7 @@
 import React from 'react'
 import {useDispatch} from 'react-redux';
 import MenuNavbar from '../menu-navbar/MenuNavbar'
+import { connect } from 'react-redux'
 import Footer from '../footer/Footer'
 import {StyledMainContainer} from './style'
 import CharacterForm from '../character-form/CharacterForm'
@@ -10,8 +11,6 @@ import { showToggle, hideToggle } from '../toggle/ToggleActions'
 const CharacterDetails = props => {
     const dispatch = useDispatch();
     const toggleId = 'characterFormComponent';
-    console.log('@@@@@@@@@@@@@@@', props.location.state.char
-    )
     const char = props.location.state.char
 
     return(
@@ -60,4 +59,7 @@ const CharacterDetails = props => {
     )
 }
 
-export default CharacterDetails
+
+const  mapStateToProps = state => ({characters: {...state.list.characters}})
+
+export default connect(mapStateToProps)(CharacterDetails)
