@@ -48,8 +48,8 @@ let CharacterForm = props => {
                         <label>Combat</label>
                         <Field type="number" component="input" placeholder={props.state.powerstats.combat} name="combat"/>
                         <div class="selectors">
-                            <button>return</button>
-                            <button type="submit">CUSTOMIZE</button>
+                            <button>Return</button>
+                            <button type="submit">Customize</button>
                         </div>
                     </form>
                 </StyledCardMainContainer>

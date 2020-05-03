@@ -12,11 +12,12 @@ const CharacterDetails = props => {
     const dispatch = useDispatch();
     const toggleId = 'characterFormComponent';
     const char = props.location.state.char
+    console.log('detaillsss')
 
     return(
         <>
             <MenuNavbar/>
-                <StyledMainContainer>
+                <StyledMainContainer >
                     <Toggle id={'characterDetailsComponent'}>
                         <div className="card">
                             <div className="identifier">
@@ -45,7 +46,7 @@ const CharacterDetails = props => {
                                         dispatch(showToggle('characterFormComponent'));
                                         dispatch(hideToggle('characterDetailsComponent'))}
                                         }>
-                                    edit <span class="material-icons">keyboard_arrow_right</span></button>
+                                    Edit <span class="material-icons">keyboard_arrow_right</span></button>
 
                             </div>
                         </div>

@@ -9,6 +9,7 @@ import {loadCharList, searchCharAction} from './characterListActions'
 const CharacterList = state => {
     const dispatch = useDispatch()
     useEffect(()=>{
+        console.log('comecou')
         if(state.characters.length === 0) {
             dispatch(loadCharList())
         } 
@@ -22,19 +23,19 @@ const CharacterList = state => {
         <>
         {
             state.characters.length <= 0 ?
-            <StyledLoader></StyledLoader>
+            <StyledLoader>loading...</StyledLoader>
             :
             <StyledMainContainer className="content">
             <div className="character-search">
-                <span class="material-icons">search</span>
-                <input onChange={searchChar} placeholder="search by name" type="text"></input>
+                <span className="material-icons">search</span>
+                <input data-testid="search-field" onChange={searchChar} placeholder="search by name" type="text"></input>
             </div>
             <StyledCardListContainer>
             {
                 state.filteredCharacters.length > 0 ?
                 state.filteredCharacters.map((char, index)=>{
                     return(
-                        <CharacterCard key={index} char={char}></CharacterCard>
+                            <CharacterCard estilo={"teste"} key={index} char={char}></CharacterCard>
                     )
                 })
                 : 

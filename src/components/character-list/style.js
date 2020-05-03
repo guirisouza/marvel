@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 const StyledMainContainer = styled.main`
+    ${props => console.log(props.estilo)}
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: auto;
 
     .character-search {
         margin: 30px;

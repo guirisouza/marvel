@@ -6,7 +6,12 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'CHARACTER_LIST_LOADED':
-            return {...state, characters: action.payload.data.slice(0, 40)}
+            console.log(action.payload.data)
+            if(action.payload.data === undefined){
+                return {...state, characters: 'teste'}
+            } else {
+                return {...state, characters: action.payload.data.slice(0, 40)}
+            }
         case 'CUSTOMIZE_CHARACTER':
             const newState = {...state}
             console.log(action.payload.id)
