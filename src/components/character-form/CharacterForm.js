@@ -6,13 +6,22 @@ import { StyledCardMainContainer } from './style'
 import { submitCharacterFormAction } from './characterFormActions'
 import { Toggle } from '../toggle/Toggle'
 import { showToggle, hideToggle } from '../toggle/ToggleActions'
+import characterMocked from '../../utils/mock'
 
 let CharacterForm = props => {
+    let char = ''
+    console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', props)
+    if(props.state === undefined) {
+        console.log('OPAAAAAAAAAA')
+        char = characterMocked
+    } else {
+        char = props.state
+    }
     const {handleSubmit} = props
     const dispatch = useDispatch()
 
     const submit = (data, action) => {
-        dispatch(submitCharacterFormAction(data, props.state))
+        dispatch(submitCharacterFormAction(data, char))
         dispatch(hideToggle('characterFormComponent'))
         dispatch(showToggle('characterDetailsComponent'))
     }
@@ -22,34 +31,35 @@ let CharacterForm = props => {
                 <StyledCardMainContainer>
                     <form onSubmit={handleSubmit(fields => submit(fields, submitCharacterFormAction))}>
                         <label>Name</label>
-                        <Field type="text" component="input" placeholder={props.state.name} name="name"/>
+                        <Field data-testid="name-field" type="text" component="input" placeholder={char.name} name="name"/>
                     
                         <label>Gender</label>
-                        <Field type="text" component="input" placeholder={props.state.appearance.gender} name="gender"/>
+                        <Field type="text" data-testid="gender-field" component="input" placeholder={char.appearance.gender} name="gender"/>
 
                         <label>Race</label>
-                        <Field type="text" component="input" placeholder={props.state.appearance.race} name="race"/>
+                        <Field type="text" data-testid="race-field" component="input" placeholder={char.appearance.race} name="race"/>
 
                         <label>Intelligence</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.intelligence} name="intelligence"/>
+                        <Field type="number" data-testid="intelligence-field" component="input" placeholder={char.powerstats.intelligence} name="intelligence"/>
 
                         <label>Strength</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.strength} name="strength"/>
+                        <Field type="number" data-testid="strenght-field" component="input" placeholder={char.powerstats.strength} name="strength"/>
 
                         <label>Speed</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.speed} name="speed"/>
+                        <Field type="number" data-testid="speed-field" component="input" placeholder={char.powerstats.speed} name="speed"/>
 
                         <label>Durability</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.durability} name="durability"/>
+                        <Field type="number" data-testid="durability-field" component="input" placeholder={char.powerstats.durability} name="durability"/>
 
                         <label>Power</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.power} name="power"/>
+                        <Field type="number" data-testid="power-field" component="input" placeholder={char.powerstats.power} name="power"/>
 
                         <label>Combat</label>
-                        <Field type="number" component="input" placeholder={props.state.powerstats.combat} name="combat"/>
+                        <Field type="number"  data-testid="combat-field" component="input" placeholder={char.powerstats.combat} name="combat"/>
+                        
                         <div className="selectors">
                             <button>Return</button>
-                            <button type="submit">Customize</button>
+                            <button type="submit" data-testid="customize-button">Customize</button>
                         </div>
                     </form>
                 </StyledCardMainContainer>

@@ -27,8 +27,8 @@ const CharacterDetails = props => {
                 <StyledMainContainer >
                     <Toggle id={'characterDetailsComponent'}>
                         <div className="card">
-                            <div className="identifier">
-                                <span>{char.name}</span>
+                            <div  className="identifier">
+                                <span data-testid="name-identifier">{char.name}</span>
                             </div>
                             <div className="appearance">
                                 <ul>
