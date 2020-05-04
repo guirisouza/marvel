@@ -7,9 +7,9 @@ const MenuNavBar = () => {
     return (
         <>
             <StyledHeader className="header">
-            <Link to="/">
-                <a className="logo"><img src={logo} alt="logo"/></a>
-            </Link >
+            <div>
+                <Link to="/" className="logo"><img src={logo} alt="logo"/></Link>
+            </div>
             <nav>
                 <ul>
                     <li><a>About Me</a></li>

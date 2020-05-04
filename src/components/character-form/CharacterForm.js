@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
 import { useDispatch } from 'react-redux'
@@ -47,7 +47,7 @@ let CharacterForm = props => {
 
                         <label>Combat</label>
                         <Field type="number" component="input" placeholder={props.state.powerstats.combat} name="combat"/>
-                        <div class="selectors">
+                        <div className="selectors">
                             <button>Return</button>
                             <button type="submit">Customize</button>
                         </div>

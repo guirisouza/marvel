@@ -152,7 +152,6 @@ describe('CharacterList Component',  () => {
         const characterCardNode = await waitForElement(
             () => getByText(searchName)
         )
-        console.log(characterCardNode)
         expect(characterCardNode).toBeInTheDocument()
     })
 })

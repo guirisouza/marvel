@@ -5,14 +5,21 @@ import { connect } from 'react-redux'
 import Footer from '../footer/Footer'
 import {StyledMainContainer} from './style'
 import CharacterForm from '../character-form/CharacterForm'
+import mockedChar from '../../utils/mock'
 import { Toggle } from '../toggle/Toggle'
 import { showToggle, hideToggle } from '../toggle/ToggleActions'
 
 const CharacterDetails = props => {
+    let char = ''
+    if(props.char){
+        char = props.location.state.char
+    }
+    else {
+        props.location === undefined 
+        ? char = mockedChar
+        : char = props.location.state.char
+    }
     const dispatch = useDispatch();
-    const toggleId = 'characterFormComponent';
-    const char = props.location.state.char
-    console.log('detaillsss')
 
     return(
         <>
@@ -23,16 +30,16 @@ const CharacterDetails = props => {
                             <div className="identifier">
                                 <span>{char.name}</span>
                             </div>
-                            <div class="appearance">
+                            <div className="appearance">
                                 <ul>
                                     <li>Gender: {char.appearance.gender}</li>
                                     <li>Race: {char.appearance.race}</li>
                                 </ul>
                             </div>
-                            <div class="image-char">
+                            <div className="image-char">
                                 <img src={char.images.sm} />
                             </div>
-                            <div class="powerstats">
+                            <div className="powerstats">
                                 <ul>
                                     <li>Intelligence: {char.powerstats.intelligence}</li>
                                     <li>Strength: {char.powerstats.strength}</li>
@@ -42,11 +49,11 @@ const CharacterDetails = props => {
                                     <li>Combat: {char.powerstats.combat}</li>
                                 </ul>
 
-                                    <button onClick={() => {
+                                    <button data-testid="customizer-button" onClick={() => {
                                         dispatch(showToggle('characterFormComponent'));
                                         dispatch(hideToggle('characterDetailsComponent'))}
                                         }>
-                                    Edit <span class="material-icons">keyboard_arrow_right</span></button>
+                                    Customizer <span className="material-icons">keyboard_arrow_right</span></button>
 
                             </div>
                         </div>
