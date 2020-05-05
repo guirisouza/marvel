@@ -19,6 +19,10 @@ Create a basic React project CRUD using MarvelAPI with test following the instru
 - [x] create characters search tool  by name
 - [x] create component test modules
 
+## **PROJECT PLUS**
+
+- [] implement pipeline GiLab
+
 ### technical restrictions
 
 - *create-react-app*
