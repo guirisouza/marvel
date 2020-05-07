@@ -12,7 +12,7 @@ const MenuNavBar = () => {
             </div>
             <nav>
                 <ul>
-                    <li><a>About Me</a></li>
+                    <li><a href="https://www.linkedin.com/in/guilherme-ribeiro-de-souza/">About Me</a></li>
                 </ul>
             </nav>
             </StyledHeader>

@@ -6,7 +6,6 @@ const INITIAL_STATE = {
 export default (state = INITIAL_STATE, action) => {
     switch(action.type) {
         case 'CHARACTER_LIST_LOADED':
-            console.log(action.payload.data)
             if(action.payload.data === undefined){
                 return {...state, characters: 'teste'}
             } else {
@@ -14,7 +13,6 @@ export default (state = INITIAL_STATE, action) => {
             }
         case 'CUSTOMIZE_CHARACTER':
             const newState = {...state}
-            console.log(action.payload.id)
             newState.characters.map((char, index)=> {
                 if(char['id'] === action.payload.id) {
                     newState.characters = action.payload.data

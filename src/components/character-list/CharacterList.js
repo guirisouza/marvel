@@ -9,7 +9,6 @@ import {loadCharList, searchCharAction} from './characterListActions'
 const CharacterList = state => {
     const dispatch = useDispatch()
     useEffect(()=>{
-        console.log('comecou')
         if(state.characters.length === 0) {
             dispatch(loadCharList())
         } 

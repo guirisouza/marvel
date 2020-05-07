@@ -10,9 +10,7 @@ import characterMocked from '../../utils/mock'
 
 let CharacterForm = props => {
     let char = ''
-    console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', props)
     if(props.state === undefined) {
-        console.log('OPAAAAAAAAAA')
         char = characterMocked
     } else {
         char = props.state
