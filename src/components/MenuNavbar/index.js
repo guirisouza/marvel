@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import logo from '../../images/marvel-logo.png'
-import {StyledHeader} from './style'
+import {StyledHeader} from './styles'
 
 const MenuNavBar = () => {
     return (

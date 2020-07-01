@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyledContainerCard} from './style'
+import {StyledContainerCard} from './styles'
 import { Link } from 'react-router-dom';
 
 const CharacterCard = state => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import {Route, Switch} from 'react-router-dom'
-import CharacterDetails from '../components/character-details/CharacterDetails'
-import { Toggle } from '../components/toggle/Toggle'
-import Home from '../components/home/Home'
+import CharacterDetails from '../pages/CharacterDetail/index'
+import { Toggle } from '../components/Toggle/index'
+import Home from '../pages/Home/index'
 import '../App.css'
 
 const App = () => {

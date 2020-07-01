@@ -1,8 +1,8 @@
 import React from 'react'
-import MenuNavBar from '../menu-navbar/MenuNavbar'
-import Footer from '../footer/Footer'
-import CharacterList from '../character-list/CharacterList'
-import {StyledStructure} from './style'
+import MenuNavBar from '../../components/MenuNavbar/index'
+import Footer from '../../components/Footer/index'
+import CharacterList from '../../components/CharacterList/index'
+import {StyledStructure} from './styles'
 
 const Home = () => {
     return (

@@ -9,16 +9,23 @@ export default (state = INITIAL_STATE, action) => {
             if(action.payload.data === undefined){
                 return {...state, characters: 'teste'}
             } else {
-                return {...state, characters: action.payload.data.slice(0, 40)}
+                const charsStorage = window.localStorage.getItem('characters')
+                if (charsStorage) {
+                    console.log('JA TEMMMMM')
+                    const charsStorageParsed = JSON.parse(charsStorage)
+                    return {...state, characters: charsStorageParsed }
+                } else {
+                    console.log('NAOOOO TEMMMMM')
+                    const chars = action.payload.data.slice(0, 40)
+                    window.localStorage.setItem('characters', JSON.stringify(chars))
+                    return {...state, characters: chars }
+                }
+
             }
         case 'CUSTOMIZE_CHARACTER':
             const newState = {...state}
-            newState.characters.map((char, index)=> {
-                if(char['id'] === action.payload.id) {
-                    newState.characters = action.payload.data
-                    return {...state, characters: newState.characters}
-                }
-            })
+            window.localStorage.setItem('characters', JSON.stringify(newState.characters))
+
         case 'SEARCH_CHARACTER':
             const newStateSearch = {...state}
             const filteredChars = newStateSearch.characters.filter(char => char.name.toLowerCase().indexOf(action.payload) > -1)

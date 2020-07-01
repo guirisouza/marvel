@@ -1,13 +1,13 @@
 import React from 'react'
 import {useDispatch} from 'react-redux';
-import MenuNavbar from '../menu-navbar/MenuNavbar'
+import MenuNavbar from '../../components/MenuNavbar'
 import { connect } from 'react-redux'
-import Footer from '../footer/Footer'
-import {StyledMainContainer} from './style'
-import CharacterForm from '../character-form/CharacterForm'
+import Footer from '../../components/Footer'
+import {StyledMainContainer} from './styles'
+import CharacterForm from '../../components/CharacterForm/index'
 import mockedChar from '../../utils/mock'
-import { Toggle } from '../toggle/Toggle'
-import { showToggle, hideToggle } from '../toggle/ToggleActions'
+import { Toggle } from '../../components/Toggle/index'
+import { showToggle, hideToggle } from '../../components/Toggle/actions'
 
 const CharacterDetails = props => {
     let char = ''

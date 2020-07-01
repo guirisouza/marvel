@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import characterListReducer from '../components/character-list/characterListReducer'
-import toggleReducer from '../components/toggle/toggleReducer'
+import characterListReducer from '../components/CharacterList/reducer'
+import toggleReducer from '../components/Toggle/reducer'
 import {reducer as formReducer} from 'redux-form'
 
 const rootReducer = combineReducers({
