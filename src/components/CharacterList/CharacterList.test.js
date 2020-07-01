@@ -4,7 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import '@testing-library/jest-dom/extend-expect'
 import { render, fireEvent, cleanup, waitForElement, within } from '@testing-library/react'
 import axios from 'axios';
-import CharacterList from './CharacterList'
+import CharacterList from './index'
 import store from '../../store/index'
 
 jest.mock('axios')

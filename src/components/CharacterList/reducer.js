@@ -11,12 +11,10 @@ export default (state = INITIAL_STATE, action) => {
             } else {
                 const charsStorage = window.localStorage.getItem('characters')
                 if (charsStorage) {
-                    console.log('JA TEMMMMM')
                     const charsStorageParsed = JSON.parse(charsStorage)
                     return {...state, characters: charsStorageParsed }
                 } else {
-                    console.log('NAOOOO TEMMMMM')
-                    const chars = action.payload.data.slice(0, 40)
+                    const chars = action.payload.data
                     window.localStorage.setItem('characters', JSON.stringify(chars))
                     return {...state, characters: chars }
                 }
@@ -28,10 +26,14 @@ export default (state = INITIAL_STATE, action) => {
 
         case 'SEARCH_CHARACTER':
             const newStateSearch = {...state}
-            const filteredChars = newStateSearch.characters.filter(char => char.name.toLowerCase().indexOf(action.payload) > -1)
-            return {...state, filteredCharacters: filteredChars}
-
-
+            console.log(action.payload)
+            if (action.payload.length >= 3) {
+                const filteredChars = newStateSearch.characters.filter(char => char.name.toLowerCase().indexOf(action.payload) > -1)
+                return {...state, filteredCharacters: filteredChars}
+            } else {
+                const filteredChars = newStateSearch.characters.filter(char => char.name.toLowerCase().indexOf('00000000') > -1)
+                return {...state, filteredCharacters: filteredChars}
+            }
         default: return state
     }
 }

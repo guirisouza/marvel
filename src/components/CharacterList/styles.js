@@ -35,6 +35,7 @@ const StyledCardListContainer = styled.div`
     grid-area: content;
     max-width: 1200px;
     margin: 0 auto;
+    min-height: 54vh;
 `
 
 const StyledLoader = styled.div`
@@ -67,4 +68,29 @@ const StyledLoader = styled.div`
 
 `
 
-export {StyledMainContainer , StyledCardListContainer, StyledLoader}
+const StyledPaginationBar = styled.div`
+    display: flex;
+    width: 800px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: #082c73;
+    margin: 15px;
+
+    li {
+        margin-left: 8px;
+        margin-right: 8px;
+        color: white;
+        font-family: 'Bangers', cursive;
+        font-weight: 500;
+        cursor: pointer;
+        font-size: 1.7em;
+    }
+
+    li:hover {
+        color: orange;
+    }
+`
+
+export {StyledMainContainer , StyledCardListContainer, StyledLoader, StyledPaginationBar}
