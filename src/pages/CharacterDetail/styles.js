@@ -6,6 +6,7 @@ const StyledMainContainer = styled.main`
     justify-content: center;
     align-items: center;
     background-image: url(${background});
+    min-height: 73.8vh;
 
 
     .card {
